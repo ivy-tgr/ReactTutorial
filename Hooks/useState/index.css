@@ -1,0 +1,60 @@
+body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+div:has(.counter) {
+	height: 100%;
+}
+
+.counter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	min-width: 100%;
+	padding: 20px;
+	height: 100%;
+
+	button {
+		padding: 6px 12px;
+		font-size: 20px;
+		font-weight: 500;
+		background-color: lch(30% 100 220);
+		color: white;
+		border: 4px solid lch(10% 100 200);
+		border-radius: 3px;
+		cursor: pointer;
+
+		/* matches the enable/disable button when that one shows up in the exercises */
+		&:first-of-type {
+			flex: 1;
+			max-width: 100px;
+		}
+
+		/* disables first-of-type if we haven't gotten to the exercise with the enable/disable button yet */
+		&:last-of-type {
+			flex: unset;
+			max-width: unset;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: lch(40% 100 220);
+			border-color: lch(20% 100 200);
+		}
+		&:active {
+			background-color: lch(50% 100 220);
+			border-color: lch(30% 100 220);
+		}
+		&:disabled {
+			background-color: lch(30% 20 220);
+			border-color: lch(10% 20 200);
+		}
+	}
+}
